@@ -20,6 +20,13 @@ public class mainPageController {
 	@Autowired
 	private SeraService seraService;
 	
+	
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public String getAppPage(ModelMap model) {
+		
+		return "appPage";
+	}
+	
 	@RequestMapping(value="/main", method = RequestMethod.GET)
 	public String getMainPage(ModelMap model) {
 		List<Sera> seralar = seraService.get();
